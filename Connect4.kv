@@ -1,0 +1,75 @@
+<HomeScreen>:
+    canvas:
+        Color:
+            rgba: (137/255, 247/255, 37/255, 0.4)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    MDFillRoundFlatButton:
+        text: "PLAY"
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        size_hint: 0.45, 0.095
+        on_press: app.change_screen()
+        font_size: "30sp"
+
+<GameScreen>:
+    Label:
+        pos_hint: {"center_x": 0.5, "center_y":0.4}
+        text: "Loading...."
+        font_size:  "30sp"
+        color: 0,0,0,1
+
+    BoxLayout:
+        orientation: "vertical"
+
+        MDTopAppBar:
+            id: top_bar
+            right_action_items: [["reload", lambda x: app.reset_game()]]
+            elevation: 1
+
+
+        BoxLayout:
+            id: main_layout
+            orientation: "vertical"
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            padding: "4dp"
+            GridLayout:
+                id: turn_grid
+                rows: 1
+                cols: 2
+                padding: [0, "15dp", 0, 0]
+                RelativeLayout:
+                    id: left_turn
+
+                RelativeLayout:
+                    id: right_turn
+
+            GridLayout:
+                id: input_buttons
+                rows: 1
+                cols: app.game.columns
+                size_hint_y: None
+                spacing: 0
+                height: self.width/app.game.rows
+                padding: [0, 4, 0, 4]
+
+            GridLayout:
+                id: grid_layout
+                rows: app.game.rows
+                cols: app.game.columns
+                spacing: 0
+                size_hint_y: None
+                height: self.width * (self.rows/self.cols)
+
+            Button:
+                size_hint_y: 0.4
+                opacity: 0
+
+
+
+
+
+
+
+
+
