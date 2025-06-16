@@ -22,8 +22,11 @@ When the app starts the window will resize. It might look slim but I set this so
 main.py and Connect4.kv file contains all the required code. Assets folder contains the required pictures for Android APK, including the icon and presplash. 
 Presplash and icon are only shown on the APK. These aren't shown when running it on dekstop.
 
-## Dependencies:
-I used Python 3.12, Kivy 2.3.0 and KivyMD 1.2.0. 
+## 📦 Dependencies:
+- Python 3.12
+- Kivy 2.3.0
+- KivyMD 1.2.0
+
 I haven't tested the app using latest version of python and kivy. So it may not work with future versions if some tools get deprecated. So make sure you have these installed.
 
 ## How to Run
